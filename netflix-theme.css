@@ -1,0 +1,188 @@
+/* Intégration des polices */
+@font-face {
+    font-family: 'Comic Sans MS';
+    src: local('Comic Sans MS'), local('ComicSansMS'), url('https://fonts.gstatic.com/s/comicsansms/v9/7wZm09wFON0d2X6DrWk0hrCZpMLPGoW6na6XKD8.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Styles globaux */
+body {
+    font-family: 'Comic Sans MS', cursive, sans-serif; /* Police Comic Sans MS */
+    background-color: #1a1a1a; /* Fond sombre */
+    color: #f5f5f5; /* Texte clair */
+    margin: 0;
+    padding: 0;
+}
+
+/* En-tête */
+.header {
+    background: rgba(50, 50, 50, 0.8); /* Fond semi-transparent rouge foncé */
+    color: #f5f5f5;
+    border-bottom: 1px solid #333;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.header .logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+/* Navigation principale */
+.navbar {
+    display: flex;
+    gap: 20px;
+}
+
+.navbar a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 3px;
+    transition: background-color 0.3s;
+}
+
+.navbar a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Bannière héroïque */
+.hero-banner {
+    position: relative;
+    height: 400px;
+    background: url('path-to-your-hero-image.jpg') center/cover no-repeat; /* Image d'arrière-plan */
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 60px; /* Pour éviter que la bannière soit cachée derrière l'en-tête */
+    overflow: hidden; /* Assure que les effets ne débordent pas */
+}
+
+.hero-banner::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(20, 20, 20, 0.7); /* Couche sombre avec effet de verre */
+    backdrop-filter: blur(12px); /* Effet de flou */
+    z-index: 1;
+}
+
+.hero-banner .title {
+    position: relative;
+    font-size: 48px;
+    font-weight: bold;
+    z-index: 2;
+}
+
+.hero-banner .description {
+    font-size: 20px;
+    z-index: 2;
+}
+
+/* Carrousel de médias */
+.media-carousel {
+    display: flex;
+    overflow-x: auto;
+    padding: 10px 0;
+}
+
+.media-carousel-item {
+    flex: 0 0 auto;
+    width: 220px;
+    margin-right: 15px;
+}
+
+.media-carousel-item img {
+    width: 100%;
+    border-radius: 10px; /* Coins arrondis */
+    transition: transform 0.3s, filter 0.3s;
+}
+
+.media-carousel-item img:hover {
+    transform: scale(1.05); /* Zoom léger sur survol */
+    filter: brightness(0.8); /* Réduction de la luminosité sur survol */
+}
+
+/* Pages d'épisodes et de présentation */
+.page-content {
+    background: rgba(30, 30, 30, 0.8); /* Fond rouge foncé avec transparence */
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px;
+    backdrop-filter: blur(10px); /* Effet de flou */
+}
+
+.page-content h1, .page-content h2, .page-content h3, .page-content p {
+    color: #ffffff;
+}
+
+/* Pied de page */
+.footer {
+    background: rgba(50, 50, 50, 0.8); /* Fond sombre avec transparence */
+    color: #666;
+    padding: 20px;
+    text-align: center;
+    border-top: 1px solid #333;
+}
+
+.footer a {
+    color: #666;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+/* Boutons */
+.button {
+    background-color: #c62828; /* Rouge foncé */
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.button:hover {
+    background-color: #b71c1c; /* Rouge foncé plus sombre au survol */
+    transform: scale(1.05); /* Zoom léger sur survol */
+}
+
+/* Ajustements pour les écrans plus petits */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar {
+        flex-direction: column;
+    }
+
+    .media-carousel {
+        flex-direction: column;
+    }
+
+    .media-carousel-item {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+}
